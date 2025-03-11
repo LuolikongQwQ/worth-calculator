@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  
+  "build:worker": "opennextjs-cloudflare",
+  "dev:worker": "wrangler dev --port 8771",
+  "preview:worker": "npm run build:worker && npm run dev:worker",
+  "deploy:worker": "npm run build:worker && wrangler deploy",
+  
   "dependencies": {
     "lucide-react": "^0.454.0",
     "next": "15.0.2",
@@ -15,6 +21,7 @@
     "react-dom": "19.0.0-rc-02c0e824-20241028"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
